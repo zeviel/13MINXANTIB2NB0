@@ -5,7 +5,7 @@ AminoAntiBanBot this script makes it impossible or difficult to ban you/Этот
 - apt upgrade
 - pip install colorama
 - pkg install python
-- pip install amino.py
+- pip install amino.py==1.2.17
 - apt install git
 - git clone https://github.com/LilZevi/AminoAntiBanBo
 - Для запуска/For starting
