@@ -5,7 +5,7 @@ attr(0)
 print(fore.LIGHT_STEEL_BLUE + style.BOLD)
 print("""Script by deluvsushi
 Github : https://github.com/deluvsushi""")
-print(pyfiglet.figlet_format("aminoantibanbo", font="smslant"))
+print(pyfiglet.figlet_format("13MINXANTIB2NB0", font="smslant"))
 client = AminoLab.Client()
 email = input("Email >> ")
 password = input("Password >> ")
