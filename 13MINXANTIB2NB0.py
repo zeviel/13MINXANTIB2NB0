@@ -1,36 +1,38 @@
-import AminoLab
-import pyfiglet
-from colored import fore, back, style, attr
-attr(0)
-print(fore.LIGHT_STEEL_BLUE + style.BOLD)
-print("""Script by deluvsushi
-Github : https://github.com/deluvsushi""")
-print(pyfiglet.figlet_format("13MINXANTIB2NB0", font="smslant"))
-client = AminoLab.Client()
-email = input("Email >> ")
-password = input("Password >> ")
-client.auth(email=email, password=password)
-clients = client.my_communities()
+import amino
+print("""\033[38;5;45m
+Script by deluvsushi
+Github : https://github.com/deluvsushi
+─╔╗─╔═══╗───────────────────────╔╗───╔╗──╔═══╗────╔╗──╔═══╗
+╔╝║─║╔═╗║──────────────────────╔╝╚╗──║║──║╔═╗║────║║──║╔═╗║
+╚╗║─╚╝╔╝║╔╗╔╗╔╗╔═╗─╔╗╔╗╔══╗╔═╗─╚╗╔╝╔╗║╚═╗╚╝╔╝║╔═╗─║╚═╗║║║║║
+─║║─╔╗╚╗║║╚╝║─╣║╔╗╗╚╬╬╝║╔╗║║╔╗╗─║║──╣║╔╗║╔═╝╔╝║╔╗╗║╔╗║║║║║║
+╔╝╚╗║╚═╝║║║║║║║║║║║╔╬╬╗║╔╗║║║║║─║╚╗║║║╚╝║║║╚═╗║║║║║╚╝║║╚═╝║
+╚══╝╚═══╝╚╩╩╝╚╝╚╝╚╝╚╝╚╝╚╝╚╝╚╝╚╝─╚═╝╚╝╚══╝╚═══╝╚╝╚╝╚══╝╚═══╝""")
+client = amino.Client()
+email = input("-- Email::: ")
+password = input("-- Password::: ")
+client.login(email=email, password=password)
+clients = client.sub_clients(start=0, size=100)
 for x, name in enumerate(clients.name, 1):
-    print(f"{x}.{name}")
-ndc_Id = clients.ndc_Id[int(input("Select the community >> ")) - 1]
-print("""[1] On AntiBan
-[2] Off AntiBan""")
-select = input("Select >> ")
+    print(f"-- {x}:{name}")
+com_id = clients.comId[int(input("-- Select the community::: ")) - 1]
+sub_client = amino.SubClient(comId=com_id, profile=client.profile)
+print("""
+[1] Enable antiban
+[2] Disable antiban
+""")
+select = int(input("-- Select::: "))
 
-content = open("antiban_text.txt").read()
-
-if select == "1":
+if select == 1:
     try:
-        client.edit_profile(ndc_Id=ndc_Id, content=content)
-        print("AntiBan Onned!")
+        sub_client.edit_profile(content=open("content.txt").read())
+        print("-- Antiban is enabled!")
     except Exception as e:
         print(e)
 
-elif select == "2":
+elif select == 2:
     try:
-        content = "github.com/deluvsushi"
-        client.edit_profile(ndc_Id=ndc_Id, content=content)
-        print("AntiBan Offed")
+        sub_client.edit_profile(content="github.com/deluvsushi")
+        print("-- Antiban is disabled...")
     except Exception as e:
         print(e)
