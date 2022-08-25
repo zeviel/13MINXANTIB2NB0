@@ -1,7 +1,7 @@
 import amino
 print("""\033[38;5;45m
-Script by deluvsushi
-Github : https://github.com/deluvsushi
+Script by zeviel
+Github : https://github.com/zeviel
 ─╔╗─╔═══╗───────────────────────╔╗───╔╗──╔═══╗────╔╗──╔═══╗
 ╔╝║─║╔═╗║──────────────────────╔╝╚╗──║║──║╔═╗║────║║──║╔═╗║
 ╚╗║─╚╝╔╝║╔╗╔╗╔╗╔═╗─╔╗╔╗╔══╗╔═╗─╚╗╔╝╔╗║╚═╗╚╝╔╝║╔═╗─║╚═╗║║║║║
