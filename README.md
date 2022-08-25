@@ -9,7 +9,7 @@ Bot that makes it impossible or difficult to ban you in Amino
 - pkg install python
 - pip install amino.py
 - apt install git
-- git clone https://github.com/deluvsushi/13MINXANTIB2NB0
+- git clone https://github.com/zeviel/13MINXANTIB2NB0
 - cd 13MINXANTIB2NB0
 - python 13MINXANTIB2NB0.py
 ```
